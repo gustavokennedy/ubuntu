@@ -38,10 +38,6 @@ echo "Aidiconando usuário sudo e ajustando privilégios..."
 # Adicione o usuário sudo e conceda privilégios
 useradd --create-home --shell "/bin/bash" --groups sudo "${USERNAME}"
 
-echo "Verificando se conta possui senha real..."
-# Verifique se a conta root tem uma senha real definida
-encrypted_root_pw="$(grep root /etc/shadow | cut --delimiter=: --fields=2)"
-
 echo "Criando diretório SSH para usuário sudo..."
 # Cria o diretório SSH para o usuário sudo
 home_directory="$(eval echo ~${USERNAME})"
