@@ -1,6 +1,6 @@
 #!/bin/bash
-# Para atualizar o Frontend o utilize: ./initial_setup.sh
-# Para problemas de permissão: chmod +x initial_setup.sh
+# Para atualizar o Frontend o utilize: ./setup.sh
+# Para problemas de permissão: chmod +x setup.sh
 set -euo pipefail
 
 ########################
