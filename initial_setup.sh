@@ -68,3 +68,27 @@ sed --in-place 's/^PermitRootLogin.*/PermitRootLogin prohibit-password/g' /etc/s
 if sshd -t -q; then
     systemctl restart sshd
 fi
+
+# Instala Ansible
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
+
+# Instala Nginx
+sudo apt update
+sudo apt install nginx
+
+# Instala MySQL
+sudo apt install mysql-server
+
+# Instala PHP
+sudo apt install php-fpm php-mysql
+sudo systemctl reload nginx
+
+# Instala NodeJS
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
+nvm install lts/*
+nvm use lts/*
+sudo apt install npm
