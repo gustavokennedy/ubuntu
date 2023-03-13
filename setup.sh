@@ -26,7 +26,8 @@ OTHER_PUBLIC_KEYS_TO_ADD=(
 ### VARIAVEIS LÓGICAS ###
 ####################
 
-echo " _____     _______ ____      _    _     _       ____ _     ___  _   _ ____
+echo
+" _____     _______ ____      _    _     _       ____ _     ___  _   _ ____
  / _ \ \   / / ____|  _ \    / \  | |   | |     / ___| |   / _ \| | | |  _ \
 | | | \ \ / /|  _| | |_) |  / _ \ | |   | |    | |   | |  | | | | | | | | | |
 | |_| |\ V / | |___|  _ <  / ___ \| |___| |___ | |___| |__| |_| | |_| | |_| |
@@ -68,24 +69,24 @@ chown --recursive "${USERNAME}":"${USERNAME}" "${home_directory}/.ssh"
 echo "Instalando Ansible..."
 # Instala Ansible
 sudo apt-add-repository ppa:ansible/ansible
-sudo apt update
-sudo apt install ansible
+sudo apt update -y
+sudo apt install ansible -y
 echo "---- Ansible instalado com sucesso!"
 
 echo "Instalando Nginx..."
 # Instala Nginx
-sudo apt update
-sudo apt install nginx
+sudo apt update -y
+sudo apt install nginx -y
 echo "---- Nginx instalado com sucesso!"
 
 echo "Instalando MySQL..."
 # Instala MySQL
-sudo apt install mysql-server
+sudo apt install mysql-server -y
 echo "---- MySQL instalado com sucesso!"
 
 echo "Instalando PHP..."
 # Instala PHP
-sudo apt install php-fpm php-mysql
+sudo apt install php-fpm php-mysql -y
 sudo systemctl reload nginx
 echo "---- PHP instalado com sucesso!"
 
@@ -96,5 +97,5 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source ~/.bashrc
 nvm install lts/*
 nvm use lts/*
-sudo apt install npm
+sudo apt install npm -y
 echo "---- NodeJS & NPM instalados com sucesso!"
