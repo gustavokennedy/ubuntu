@@ -72,12 +72,11 @@
         state: present
         backup: yes
 
-    - name: Cria usuário MySQL
-      community.mysql.mysql_user:
-        name: overall
-        password: 123456
-        priv: '*.*:ALL'
-        state: present
+    - name: Cria banco de dados
+      mysql_db:
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+        name: {{ db_nome }}
+        state: present 
 
 # Configuração Ansible para Ubuntu 20.04 - PHP
 
