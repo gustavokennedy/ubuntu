@@ -32,7 +32,7 @@
     - name: Gera arquivo de Index OC
       template:
         src: "files/index.nginx-debian.html.j2"
-        dest: "/var/www/html/index.nginx-debian.html"
+        dest: "/var/www/html/{{ dominio }}/index.nginx-debian.html"
         
     - name: Copia arquivo de configuração do Available para Enabled
       file:
