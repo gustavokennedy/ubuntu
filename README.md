@@ -27,3 +27,7 @@ Define permissões para o setup:
 Inicie o setup:
 
     ./setup.sh
+
+Comando em única linha:
+
+    git clone git@github.com:gustavokennedy/ubuntu.git && cd ubuntu && chmod +x setup.sh && ./setup.sh
