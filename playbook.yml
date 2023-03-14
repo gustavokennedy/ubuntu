@@ -1,0 +1,81 @@
+##################################################
+Gustavo Kennedy Renkel
+Ansible Playbook de configuração inicial para Ubuntu 20.04 
+##################################################
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: Instala Pré-requisitos
+      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+      loop: [ 'aptitude' ]
+
+    - name: Instala pacote LEMP
+      apt: name={{ item }} update_cache=yes state=latest
+      loop: [ 'nginx', 'mysql-server', 'python3-pymysql', 'php-fpm', 'php-mysql' ]
+    
+# Nginx Configuration
+    - name: Copia arquivo de configuração do Nginx
+      template:
+        src: "files/nginx.conf.j2"
+        dest: "/etc/nginx/sites-available/{{ http_conf }}"
+
+    - name: Habilita novo site no Nginx
+      file:
+        src: "/etc/nginx/sites-available/{{ http_conf }}"
+        dest: "/etc/nginx/sites-enabled/{{ http_conf }}"
+        state: link
+      notify: Reload Nginx
+    
+    - name: Remove sites "default" do Nginx
+      file:
+        path: "/etc/nginx/sites-enabled/default"
+        state: absent
+      notify: Reload Nginx
+
+# MySQL Configuration
+    - name: Dedfine senha do MySQL root
+      mysql_user: 
+        name: root 
+        password: "{{ mysql_root_password }}"
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
+    - name: Remove todos usuários anonimos do MySQL
+      mysql_user:
+        name: ''
+        host_all: yes
+        state: absent
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+
+    - name: Remove banco de dados Test do MySQL
+      mysql_db: 
+        name: test 
+        state: absent
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+
+    - name: Criando banco de dados
+      mysql_db:
+        name: "{{db_name}}"
+        state: present
+
+# Cria arquivo de Info do PHP
+    - name: Define PHP Info Page no Nginx
+      template:
+        src: "files/info.php.j2"
+        dest: "/var/www/html/info.php"
+
+  handlers:
+    - name: Recarrega Nginx
+      service:
+        name: nginx
+        state: reloaded
+
+    - name: Reinicia Nginx
+      service:
+        name: nginx
+        state: restarted
