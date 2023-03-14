@@ -3,7 +3,6 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 
 ### Ferramentas e Tecnologias
 
- - React 
  - [NodeJS v16.19.1](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
  - [MySQL 8.0.32](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04)
  - [Nginx 1.18.0](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04)
