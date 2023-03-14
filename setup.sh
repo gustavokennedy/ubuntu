@@ -10,7 +10,7 @@ RESET=`tput sgr0`
 
 set -euo pipefail
 
-echo "
+echo "${GREEN}
    ______      ________ _____            _      _        _____ _      ____  _    _ _____  
   / __ \ \    / /  ____|  __ \     /\   | |    | |      / ____| |    / __ \| |  | |  __ \ 
  | |  | \ \  / /| |__  | |__) |   /  \  | |    | |     | |    | |   | |  | | |  | | |  | |
@@ -21,15 +21,14 @@ echo "
                                                                                           
 
 "
-echo -e "${BLUE}INICIANDO ${RESET}AMBIENTE"
-echo "###### Iniciando ambiente ######"
+echo -e "${RED} INICIANDO AMBIENTE ${RESET}"
 export DEBIAN_FRONTEND=noninteractive
-echo "Instalando Ansible..."
+echo "${RED} Instalando Ansible...${RESET}"
 # Instala Ansible
 sudo apt-add-repository ppa:ansible/ansible --yes
 sudo apt update -qy
 sudo apt install ansible -qy
-echo "---- Ansible instalado com sucesso!"
+echo "${GREEN}---- Ansible instalado com sucesso!${RESET}"
 echo "Instalando módulos necessários..."
 sudo apt install php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear --yes
 echo "---- Módulos instalados com sucesso!"
