@@ -21,12 +21,6 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 - `db_pass`: senha do usuário do banco de dados.
 - `db_nome`: nome para criação do banco de dados.
 
-
-#Banco de Dados
-db_user: "root"
-db_pass: ""
-db_nome: "teste"
-
 ## Rodando Playbook
 
 Passos:
