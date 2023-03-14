@@ -11,6 +11,12 @@
     - name: Instala Pré-requisitos
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
       loop: [ 'aptitude' ]
+      
+    - name: Atualiza repositórios e cache
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+      
+   - name: Atualiza pacotes APT
+      apt: upgrade=dist force_apt_get=yes
 
     - name: Instala pacote LEMP
       apt: name={{ item }} update_cache=yes state=latest
