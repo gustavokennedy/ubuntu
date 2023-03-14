@@ -1,10 +1,6 @@
 # Setup inicial LEMP para Ubuntu 20.04
 Repositório com arquivos, configuração e deploy inicial LEMP para Ubuntu 20.04. Usado para aplicações web (php, laravel, javascript, nodejs, mysql, postgres, python...).
 
-```shell
-git clone https://github.com/gustavokennedy/ubuntu.git && cd ubuntu && chmod +x setup.sh && ./setup.sh
-```
-
 ### Ferramentas e Tecnologias
 
  - [NodeJS v16.19.1](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
