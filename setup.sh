@@ -22,3 +22,5 @@ sudo apt-add-repository ppa:ansible/ansible --yes
 sudo apt update -qy
 sudo apt install ansible -qy
 echo "---- Ansible instalado com sucesso!"
+echo "Configurando playbook do Ansible"
+ansible-playbook playbook.yml
