@@ -37,7 +37,7 @@
       notify: Recarrega Nginx
       
     - name: Cria Certificado LetsEncrypt
-      shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }}
+      shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }} -d www.{{ domain_name }}
       args:
         creates: /etc/letsencrypt/live/{{ domain_name }}
     
