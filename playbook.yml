@@ -1,5 +1,5 @@
 ##################################################
-Gustavo Kennedy Renkel - Ansible Playbook de configuração inicial para Ubuntu 20.04 
+# Gustavo Kennedy Renkel - Ansible Playbook de configuração inicial para Ubuntu 20.04 
 ##################################################
 ---
 - hosts: all
