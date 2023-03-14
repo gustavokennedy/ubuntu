@@ -51,3 +51,6 @@ echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
 #echo "${RED}  Instalando PHPMYADMIN...${RESET}"
 #sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -qy --yes
 #echo "${GREEN}----OK PHPMYADMIN INSTALADO COM SUCESSO!${RESET}"
+#echo "${RED}  Reiniciando Nginx...${RESET}"
+sudo systemctl reload nginx && sudo systemctl restart nginx
+#echo "${GREEN}----OK NGINX REINICIADO COM SUCESSO!${RESET}"
