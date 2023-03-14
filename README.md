@@ -42,6 +42,7 @@ nano vars/default.yml
 ---
 mysql_root_password: "senha_root_mysql"
 db_name: "nome_banco_dados"
+mysql_user: "usuario_db"
 http_host: "dominio.overall.cloud"
 http_conf: "dominio.overall.cloud.conf"
 http_port: "80"
