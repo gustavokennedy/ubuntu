@@ -13,7 +13,7 @@ echo "###### Iniciando ambiente ######"
 export DEBIAN_FRONTEND=noninteractive
 echo "Instalando Ansible..."
 # Instala Ansible
-sudo apt-add-repository ppa:ansible/ansible -qy
+sudo apt-add-repository ppa:ansible/ansible
 sudo apt update -qy
 sudo apt install ansible -qy
 echo "---- Ansible instalado com sucesso!"
