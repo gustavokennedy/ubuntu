@@ -10,12 +10,20 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
  - Linux Ubuntu 20.04.2
  - Git 2.25.1
 
-### Clone o repositório
+### Iniciando
+
+Clone o repositório:
 
     git clone git@github.com:gustavokennedy/ubuntu.git
 
+Abra o diretório:
+
     cd ubuntu
 
+Define permissões para o setup:
+
     chmod +x setup.sh
+
+Inicie o setup:
 
     ./setup.sh
