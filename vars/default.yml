@@ -8,3 +8,7 @@ porta_api: "3333"
 
 #Frontend
 porta_front: "3000"
+
+#Banco de Dados
+db_user: "root"
+db_pass: ""
