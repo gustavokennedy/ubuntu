@@ -15,6 +15,7 @@ echo "
 
 "
 echo "###### Iniciando ambiente ######"
+echo -e "\033[31m Hello World"
 export DEBIAN_FRONTEND=noninteractive
 echo "Instalando Ansible..."
 # Instala Ansible
