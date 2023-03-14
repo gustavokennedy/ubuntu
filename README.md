@@ -17,7 +17,6 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 - `http_port`: porta HTTP, default is 80.
 
 
-
 ## Rodando Playbook
 
 Passos:
@@ -37,9 +36,15 @@ nano vars/default.yml
 ```yml
 #vars/default.yml
 ---
-http_host: "dominio.overall.cloud"
-http_conf: "dominio.overall.cloud.conf"
+dominio: "domain"
+letsencrypt_email: "email_for_le"
 http_port: "80"
+
+#API
+porta_api: "3333"
+
+#Frontend
+porta_front: "3000"
 ```
 
 ### 3. Rode o Playbook
