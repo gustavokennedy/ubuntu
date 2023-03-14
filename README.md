@@ -13,10 +13,12 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 ## Variáveis
 
 - `mysql_root_password`: senha do root no MySQL.
-- `db_name`: nome do banco de dados.
+- `db_name`: nome do banco de dados para criação no MySQL.
+- `mysql_user`: nome para criação do usuário no MySQL.
 - `http_host`: endereço do domínio.
 - `http_conf`: arquivo de configuração do Nginx.
 - `http_port`: porta HTTP, default is 80.
+
 
 
 ## Rodando Playbook
