@@ -1,6 +1,6 @@
 ---
-dominio: "domain"
-letsencrypt_email: "email_for_le"
+dominio: "default"
+letsencrypt_email: "gustavo@overall.cloud"
 http_port: "80"
 
 #API
