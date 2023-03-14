@@ -27,7 +27,7 @@
         src: "/etc/nginx/sites-available/{{ http_conf }}"
         dest: "/etc/nginx/sites-enabled/{{ http_conf }}"
         state: link
-      notify: Reload Nginx
+      notify: Recarrega Nginx
     
     - name: Remove sites "default" do Nginx
       file:
