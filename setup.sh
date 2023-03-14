@@ -22,5 +22,8 @@ sudo apt-add-repository ppa:ansible/ansible --yes
 sudo apt update -qy
 sudo apt install ansible -qy
 echo "---- Ansible instalado com sucesso!"
-echo "Configurando playbook do Ansible"
+echo "Configurando playbook do Ansible..."
 ansible-playbook playbook.yml
+echo "Instalando módulos necessários..."
+sudo apt install php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear
+echo "---- Módulos instalados com sucesso!"
