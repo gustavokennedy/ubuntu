@@ -43,13 +43,14 @@
         state: started
         enabled: yes
 
-    - name: Cria usuário MySQL
-      mysql_user:
-        name: "{{ mysql_user }}"
-        password: "{{ mysql_root_password }}"
-        priv: '*.*:ALL'
-        host: '%'
-        state: present
+    - name: Enable remote login to mysql
+      lineinfile:
+         path: /etc/mysql/mysql.conf.d/mysqld.cnf
+         regexp: '^bind-address'
+         line: 'bind-address = 0.0.0.0'
+         backup: yes
+      notify:
+         - Reinicia MySQL
 
     - name: Remove todos usuários anonimos do MySQL
       mysql_user:
@@ -78,4 +79,9 @@
     - name: Reinicia Nginx
       service:
         name: nginx
+        state: restarted
+
+    - name: Reinicia MySQL
+      service:
+        name: mysql
         state: restarted
