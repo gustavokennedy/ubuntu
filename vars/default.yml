@@ -12,3 +12,4 @@ porta_front: "3000"
 #Banco de Dados
 db_user: "root"
 db_pass: ""
+db_nome: "teste"
