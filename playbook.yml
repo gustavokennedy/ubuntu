@@ -36,15 +36,22 @@
       notify: Reinicia Nginx
 
 # MySQL Configuration
-    - name: update mysql root password for all root accounts
-      mysql_user: name=root host={{ http_host }} password={{ mysql_root_password }} sql_log_bin=yes priv=*.*:ALL,GRANT
-      with_items:
-        - 127.0.0.1
-        - ::1
-        - "localhost"
-      become: true
 
-    - name: Dedfine senha do MySQL root
+    - name: Habilita e Inicia MySQL
+      service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: Cria usuário MySQL
+      mysql_user:
+        name: "{{ mysql_user }}"
+        password: "{{ mysql_root_password }}"
+        priv: '*.*:ALL'
+        host: '%'
+        state: present
+        
+    - name: Define senha do MySQL root
       mysql_user: 
         name: root 
         password: "{{ mysql_root_password }}"
