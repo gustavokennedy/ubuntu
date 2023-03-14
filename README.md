@@ -12,10 +12,11 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 
 ## Variáveis
 
-- `http_host`: endereço do domínio.
-- `http_conf`: arquivo de configuração do Nginx.
+- `dominio`: endereço do domínio.
+- `letsencrypt_email`: e-mail para Certificado SSL.
 - `http_port`: porta HTTP, default is 80.
-
+- `porta_api`: porta da API, default is 3333.
+- `porta_front`: porta do Frontend, default is 3000.
 
 ## Rodando Playbook
 
