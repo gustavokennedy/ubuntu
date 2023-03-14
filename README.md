@@ -17,6 +17,15 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 - `http_port`: porta HTTP, default is 80.
 - `porta_api`: porta da API, default is 3333.
 - `porta_front`: porta do Frontend, default is 3000.
+- `db_user`: usuário do banco de dados.
+- `db_pass`: senha do usuário do banco de dados.
+- `db_nome`: nome para criação do banco de dados.
+
+
+#Banco de Dados
+db_user: "root"
+db_pass: ""
+db_nome: "teste"
 
 ## Rodando Playbook
 
