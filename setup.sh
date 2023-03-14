@@ -3,6 +3,7 @@
 # Para problemas de permissão: chmod +x setup.sh
 RED=`tput setaf 1`
 GREEN=`tput setaf 2`
+YELLOW=`tput setaf 3`
 BLUE=`tput setaf 4`
 WHITE=`tput setaf 7`
 BOLD=`tput bold`
@@ -21,7 +22,7 @@ echo "${GREEN}
                                                                                           
 
 "
-echo -e "${RED} INICIANDO AMBIENTE ${RESET}"
+echo -e "${YELLOW} INICIANDO AMBIENTE ${RESET}"
 export DEBIAN_FRONTEND=noninteractive
 echo "${RED} Instalando Ansible...${RESET}"
 # Instala Ansible
@@ -29,8 +30,9 @@ sudo apt-add-repository ppa:ansible/ansible --yes
 sudo apt update -qy
 sudo apt install ansible -qy
 echo "${GREEN}---- Ansible instalado com sucesso!${RESET}"
-echo "Instalando módulos necessários..."
+echo "${RESET}Instalando módulos necessários..${RESET}."
 sudo apt install php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear --yes
-echo "---- Módulos instalados com sucesso!"
-echo "Configurando playbook do Ansible..."
+echo "${GREEN}---- Módulos instalados com sucesso!${RESET}"
+echo "${RED}Configurando playbook do Ansible...${RESET}"
 ansible-playbook playbook.yml
+echo "${GREEN}---- Playbook finalizado com sucesso!${RESET}"
