@@ -2,3 +2,6 @@
 dominio: "domain"
 letsencrypt_email: "email_for_le"
 http_port: "80"
+
+#API
+porta_api: "3333"
