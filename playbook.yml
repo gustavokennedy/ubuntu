@@ -35,22 +35,18 @@
         state: absent
       notify: Reinicia Nginx
 
-# MySQL Configuration
-
+# MySQL Configuration 
     - name: Habilita e Inicia MySQL
       service:
         name: mysql
         state: started
         enabled: yes
 
-    - name: Enable remote login to mysql
-      lineinfile:
-         path: /etc/mysql/mysql.conf.d/mysqld.cnf
-         regexp: '^bind-address'
-         line: 'bind-address = 0.0.0.0'
-         backup: yes
-      notify:
-         - Reinicia MySQL
+    - name: Cria banco de dados
+      mysql_db:
+        name: {{db_name}}
+        state: present 
+      become: yes
 
     - name: Remove todos usuários anonimos do MySQL
       mysql_user:
@@ -58,11 +54,6 @@
         state: absent
         login_user: root
         login_password: "{{ mysql_root_password }}"
-
-    - name: Criando banco de dados
-      mysql_db:
-        name: "{{db_name}}"
-        state: present
 
 # Cria arquivo de Info do PHP
     - name: Define PHP Info Page no Nginx
