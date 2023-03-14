@@ -40,7 +40,7 @@ sudo apt-add-repository ppa:ansible/ansible --yes
 sudo apt update -qy
 sudo apt install ansible -qy
 echo "${GREEN}----OK ANSIBLE INSTALADO COM SUCESSO!${RESET}"
-echo "${RESET}Instalando módulos necessários..${RESET}."
+echo "${RED} Instalando módulos necessários..${RESET}."
 sudo apt install php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear --yes
 echo "${GREEN}----OK MÓDULOS INSTALADOS COM SUCESSO!${RESET}"
 echo "${RED}Configurando playbook do Ansible...${RESET}"
