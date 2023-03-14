@@ -17,12 +17,12 @@
       loop: [ 'nginx', 'python3-pymysql', 'php-fpm', 'php-mysql' ]
     
 # Nginx Configuration
-    - name: Copia arquivo de configuração do Nginx
+    - name: Gera arquivo de configuração do Nginx
       template:
         src: "files/nginx.conf.j2"
         dest: "/etc/nginx/sites-available/{{ http_conf }}"
 
-    - name: Habilita novo site no Nginx
+    - name: Copia arquivo de configuração do Available para Enabled
       file:
         src: "/etc/nginx/sites-available/{{ http_conf }}"
         dest: "/etc/nginx/sites-enabled/{{ http_conf }}"
