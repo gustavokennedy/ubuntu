@@ -10,8 +10,7 @@ set -euo pipefail
 # Nome do usuário para criar e conceder privilégios sudo
 USERNAME=overall
 
-# Se deve copiar o arquivo `authorized_keys` do usuário root para o novo sudo
-# do utilizador.
+# Se deve copiar o arquivo `authorized_keys` do usuário root para o novo sudo do utilizador.
 COPY_AUTHORIZED_KEYS_FROM_ROOT=true
 
 # Chaves públicas adicionais para adicionar ao novo usuário sudo
@@ -20,6 +19,7 @@ COPY_AUTHORIZED_KEYS_FROM_ROOT=true
 #     "ssh-rsa AAAAB..."
 # )
 OTHER_PUBLIC_KEYS_TO_ADD=(
+"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwWPyPNi4Yv3o1MzKO0AoFsEgPge9YDk5NbHCoK2ZQV gustavo@overall.cloud"
 )
 
 ####################
