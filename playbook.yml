@@ -84,6 +84,27 @@
         name: "{{ db_nome }}"
         state: present 
 
+    - name: debconf for pma
+      debconf: name=phpmyadmin question='phpmyadmin/dbconfig-install' value='true' vtype='boolean'
+
+    - name: debconf for pma
+      debconf: name=phpmyadmin question='phpmyadmin/app-password-confirm' value='root' vtype='password'
+
+    - name: debconf for pma
+      debconf: name=phpmyadmin question='phpmyadmin/mysql/admin-pass' value='root' vtype='password'
+
+    - name: debconf for pma
+      debconf: name=phpmyadmin question='phpmyadmin/mysql/app-pass' value='root' vtype='password'
+
+    - name: debconf for pma
+      debconf: name=phpmyadmin question='phpmyadmin/reconfigure-webserver' value='' vtype='multiselect'
+
+    - name: install pma
+      apt: pkg=phpmyadmin state=present
+
+    - name: configure site
+      file: path=/var/www/phpmyadmin src=/usr/share/phpmyadmin state=link
+
 # Configuração Ansible para Ubuntu 20.04 - PHP
 
     - name: Define PHP Info Page no Nginx
