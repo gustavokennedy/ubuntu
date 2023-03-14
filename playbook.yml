@@ -27,12 +27,12 @@
     - name: Gera arquivo de configuração do Nginx
       template:
         src: "files/nginx.conf.j2"
-        dest: "/etc/nginx/sites-available/{{ http_conf }}"
+        dest: "/etc/nginx/sites-available/{{ dominio }}.conf"
         
     - name: Copia arquivo de configuração do Available para Enabled
       file:
-        src: "/etc/nginx/sites-available/{{ http_conf }}"
-        dest: "/etc/nginx/sites-enabled/{{ http_conf }}"
+        src: "/etc/nginx/sites-available/{{ dominio }}.conf"
+        dest: "/etc/nginx/sites-enabled/{{ dominio }}.conf"
         state: link
       notify: Recarrega Nginx
       
