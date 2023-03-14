@@ -1,6 +1,13 @@
 #!/bin/bash
 # Para atualizar o Frontend o utilize: ./setup.sh
 # Para problemas de permissão: chmod +x setup.sh
+RED=`tput setaf 1`
+GREEN=`tput setaf 2`
+BLUE=`tput setaf 4`
+WHITE=`tput setaf 7`
+BOLD=`tput bold`
+RESET=`tput sgr0`
+
 set -euo pipefail
 
 echo "
@@ -14,8 +21,8 @@ echo "
                                                                                           
 
 "
+echo -e "${BLUE}INICIANDO ${RESET}AMBIENTE"
 echo "###### Iniciando ambiente ######"
-echo -e "\033[31m Hello World"
 export DEBIAN_FRONTEND=noninteractive
 echo "Instalando Ansible..."
 # Instala Ansible
