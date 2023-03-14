@@ -53,7 +53,7 @@ chmod +x setup.sh && ./setup.sh
 
 ### Rodar Playbook manualmente
 
-```command
+```shell
 ansible-playbook playbook.yml
 ```
 
