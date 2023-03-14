@@ -63,14 +63,14 @@
 
 # Configuração Ansible para Ubuntu 20.04 - MySQL
 
-      - name: Ajusta permissões no MySQL my.cnf
-        become: yes
-        become_user: root
-        lineinfile:
-          path: /etc/mysql/my.cnf
-          line: "[mysqld] skip-grant-tables"
-          state: present
-          backup: yes
+    - name: Ajusta permissões no MySQL my.cnf
+      become: yes
+      become_user: root
+      lineinfile:
+        path: /etc/mysql/my.cnf
+        line: "[mysqld] skip-grant-tables"
+        state: present
+        backup: yes
 
     - name: Cria usuário MySQL
       community.mysql.mysql_user:
