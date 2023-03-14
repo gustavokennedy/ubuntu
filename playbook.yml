@@ -44,7 +44,7 @@
 
     - name: Cria banco de dados
       mysql_db:
-        name: {{db_name}}
+        name: "{{ db_name }}"
         state: present 
       become: yes
 
