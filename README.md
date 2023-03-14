@@ -47,28 +47,13 @@ http_port: "80"
 
 ### 3. Rode o Playbook
 
+```shell
+chmod +x setup.sh && ./setup.sh
+```
+
+### Rodar Playbook manualmente
+
 ```command
 ansible-playbook playbook.yml
 ```
 
-### Iniciando de forma automática
-
-Clone o repositório:
-
-    git clone git@github.com:gustavokennedy/ubuntu.git
-
-Abra o diretório:
-
-    cd ubuntu
-
-Define permissões para o setup:
-
-    chmod +x setup.sh
-
-Inicie o setup:
-
-    ./setup.sh
-
-Comando em única linha:
-
-    git clone https://github.com/gustavokennedy/ubuntu.git && cd ubuntu && chmod +x setup.sh && ./setup.sh
