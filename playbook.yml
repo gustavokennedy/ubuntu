@@ -29,6 +29,9 @@
         src: "files/nginx.conf.j2"
         dest: "/etc/nginx/sites-available/{{ dominio }}.conf"
         
+    - name: Cria diretório dominio HTML
+      file: name=/var/www/html/{{ dominio }} state=directory
+        
     - name: Gera arquivo de Index OC
       template:
         src: "files/index.nginx-debian.html.j2"
