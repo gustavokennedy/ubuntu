@@ -43,8 +43,11 @@ echo "${GREEN}----OK ANSIBLE INSTALADO COM SUCESSO!${RESET}"
 echo "${RED} Instalando módulos necessários..${RESET}."
 sudo apt install php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear --yes
 echo "${GREEN}----OK MÓDULOS INSTALADOS COM SUCESSO!${RESET}"
-echo "${RED}Configurando playbook do Ansible...${RESET}"
+echo "${RED} Configurando playbook do Ansible...${RESET}"
 echo "..."
 ansible-playbook playbook.yml
 echo "..."
 echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
+echo "${RED}  Instalando PHPMYADMIN...${RESET}"
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -qy --yes
+echo "${GREEN}----OK PHPMYADMIN INSTALADO COM SUCESSO!${RESET}"
