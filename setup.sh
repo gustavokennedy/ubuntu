@@ -24,6 +24,16 @@ echo "${GREEN}
 "
 echo -e "${YELLOW} INICIANDO AMBIENTE ${RESET}"
 export DEBIAN_FRONTEND=noninteractive
+echo "${RED} Atualizando sistema...${RESET}"
+sudo apt update --yes && sudo apt list --upgradable --yes && sudo apt upgrade --yes
+echo "${GREEN}----OK SISTEMA ATUALIZADO COM SUCESSO!${RESET}"
+echo "${RED} Limpando cache do sistema...${RESET}"
+sudo apt autoremove --yes && sudo apt autoclean --yes && sudo apt clean --yes
+echo "${GREEN}----OK CACHE LIMPO COM SUCESSO!${RESET}"
+echo "${RED} Configurando timezone do servidor...${RESET}"
+sudo timedatectl set-timezone "America/Sao_Paulo"
+sudo systemctl restart systemd-timesyncd.service
+echo "${GREEN}----OK TIMEZONE ATUALIZADO COM SUCESSO!${RESET}"
 echo "${RED} Instalando Ansible...${RESET}"
 # Instala Ansible
 sudo apt-add-repository ppa:ansible/ansible --yes
@@ -34,5 +44,7 @@ echo "${RESET}Instalando módulos necessários..${RESET}."
 sudo apt install php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear --yes
 echo "${GREEN}----OK MÓDULOS INSTALADOS COM SUCESSO!${RESET}"
 echo "${RED}Configurando playbook do Ansible...${RESET}"
+echo "..."
 ansible-playbook playbook.yml
+echo "..."
 echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
