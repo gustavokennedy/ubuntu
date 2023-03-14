@@ -45,6 +45,20 @@ server {
       #try_files $uri $uri/ /index.php?$query_string;
     }
     
+    location ^~ /phpmyadmin {
+            root /usr/share;
+            try_files $uri $uri/ =404;
+
+            #allow  192.168.87.0/24;
+            #allow  2001:0db8::/32;
+            #deny   all;
+
+            location ~ .php$ {
+                    include snippets/fastcgi-php.conf;
+                    fastcgi_pass unix:/var/run/php/php-fpm.sock;
+            }
+        }
+    
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php/php-fpm.sock;
