@@ -69,4 +69,4 @@ Inicie o setup:
 
 Comando em única linha:
 
-    git clone git@github.com:gustavokennedy/ubuntu.git && cd ubuntu && chmod +x setup.sh && ./setup.sh
+    git clone https://github.com/gustavokennedy/ubuntu.git --yes && cd ubuntu && chmod +x setup.sh && ./setup.sh
