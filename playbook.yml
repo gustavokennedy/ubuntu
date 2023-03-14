@@ -42,6 +42,14 @@
         state: started
         enabled: yes
 
+    - name: "Mysql Configuration - Resetting RootPassword"
+      mysql_user:
+        login_user: root
+        login_password: 
+        host: ''
+        name: root
+        password: "{{mysql_root_password}}"
+
     - name: Cria banco de dados
       mysql_db:
         name: "{{ db_name }}"
