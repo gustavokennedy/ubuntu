@@ -46,7 +46,7 @@ http_port: "80"
 ### 3. Rode o Playbook
 
 ```command
-ansible-playbook -l [target] -i [inventory file] -u [remote user] playbook.yml
+ansible-playbook playbook.yml
 ```
 
 ### Iniciando de forma automática
