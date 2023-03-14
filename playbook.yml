@@ -36,10 +36,10 @@
         state: link
       notify: Recarrega Nginx
       
-    - name: Cria Certificado LetsEncrypt
-      shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ dominio }} -d www.{{ dominio }}
-      args:
-        creates: /etc/letsencrypt/live/{{ dominio }}
+#    - name: Cria Certificado LetsEncrypt
+#      shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ dominio }} -d www.{{ dominio }}
+#      args:
+#        creates: /etc/letsencrypt/live/{{ dominio }}
        
     - name: Adiciona Cronjob para renovação dos certificado LetsEncrypt
       cron:
