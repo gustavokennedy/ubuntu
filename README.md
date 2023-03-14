@@ -46,6 +46,11 @@ porta_api: "3333"
 
 #Frontend
 porta_front: "3000"
+
+#Banco de Dados
+db_user: "root"
+db_pass: ""
+db_nome: "teste"
 ```
 
 ### 3. Rode o Playbook
