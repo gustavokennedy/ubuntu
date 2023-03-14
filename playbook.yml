@@ -14,7 +14,7 @@
 
     - name: Instala pacote LEMP
       apt: name={{ item }} update_cache=yes state=latest
-      loop: [ 'nginx', 'python3-pymysql', 'php-fpm', 'php-mysql' ]
+      loop: [ 'nginx', 'mysql-server', 'python3-pymysql', 'php-fpm', 'php-mysql' ]
     
 # Configuração Ansible para Ubuntu 20.04 - Nginx e Let's Encrypt
 
