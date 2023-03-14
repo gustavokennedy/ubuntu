@@ -70,7 +70,7 @@
 # Configuração Ansible para Ubuntu 20.04 - MySQL
 
     - name: Altera senha do root no MySQL
-      command: sudo mysql -u root -p{{ mysql_root_password }} -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '{{ mysql_root_password }}'; FLUSH PRIVILEGES;"
+      command: sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '{{ mysql_root_password }}'; FLUSH PRIVILEGES;"
 
     - name: Ajusta permissões no MySQL my.cnf
       become: yes
