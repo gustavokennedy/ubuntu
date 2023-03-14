@@ -29,6 +29,11 @@
         src: "files/nginx.conf.j2"
         dest: "/etc/nginx/sites-available/{{ dominio }}.conf"
         
+    - name: Gera arquivo de Index OC
+      template:
+        src: "files/index.nginx-debian.html.j2"
+        dest: "/var/www/html/index.nginx-debian.html"
+        
     - name: Copia arquivo de configuração do Available para Enabled
       file:
         src: "/etc/nginx/sites-available/{{ dominio }}.conf"
