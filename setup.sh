@@ -48,6 +48,6 @@ echo "..."
 ansible-playbook playbook.yml
 echo "..."
 echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
-echo "${RED}  Instalando PHPMYADMIN...${RESET}"
-sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -qy --yes
-echo "${GREEN}----OK PHPMYADMIN INSTALADO COM SUCESSO!${RESET}"
+#echo "${RED}  Instalando PHPMYADMIN...${RESET}"
+#sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -qy --yes
+#echo "${GREEN}----OK PHPMYADMIN INSTALADO COM SUCESSO!${RESET}"
