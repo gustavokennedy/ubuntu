@@ -45,7 +45,6 @@
     - name: Remove todos usuários anonimos do MySQL
       mysql_user:
         name: ''
-        host_all: yes
         state: absent
         login_user: root
         login_password: "{{ mysql_root_password }}"
