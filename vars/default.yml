@@ -1,4 +1,4 @@
 ---
-http_host: "your_domain"
+domain_name: "domain"
 http_conf: "your_domain.conf"
 http_port: "80"
