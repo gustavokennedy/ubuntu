@@ -10,10 +10,10 @@ echo " _____     _______ ____      _    _     _       ____ _     ___  _   _ ____
  \___/  \_/  |_____|_| \_\/_/   \_\_____|_____(_)____|_____\___/ \___/|____/
 "
 echo "###### Iniciando ambiente ######"
-
+export DEBIAN_FRONTEND=noninteractive
 echo "Instalando Ansible..."
 # Instala Ansible
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt update -y
-sudo apt install ansible -y
+sudo apt-add-repository ppa:ansible/ansible -qy
+sudo apt update -qy
+sudo apt install ansible -qy
 echo "---- Ansible instalado com sucesso!"
