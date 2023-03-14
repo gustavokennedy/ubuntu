@@ -2,7 +2,7 @@
 # Gustavo Kennedy Renkel - Ansible Playbook de configuração inicial para Ubuntu 20.04 
 ##################################################
 ---
-- hosts: all
+- hosts: localhost
   become: true
   vars_files:
     - vars/default.yml
