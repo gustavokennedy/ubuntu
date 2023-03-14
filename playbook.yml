@@ -69,7 +69,7 @@
     - name: Define PHP Info Page no Nginx
       template:
         src: "files/info.php.j2"
-        dest: "/var/www/html/info.php"
+        dest: "/var/www/html/{{ dominio }}/info.php"
 
   handlers:
     - name: Recarrega Nginx
