@@ -32,7 +32,6 @@ echo " _____     _______ ____      _    _     _       ____ _     ___  _   _ ____
 | |_| |\ V / | |___|  _ <  / ___ \| |___| |___ | |___| |__| |_| | |_| | |_| |
  \___/  \_/  |_____|_| \_\/_/   \_\_____|_____(_)____|_____\___/ \___/|____/
 "
-
 echo "Iniciando ambiente..."
 echo "Aidiconando usuário sudo e ajustando privilégios..."
 # Adicione o usuário sudo e conceda privilégios
