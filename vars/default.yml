@@ -1,8 +1,4 @@
 ---
-mysql_root_password: ""
-db_name: "db_name"
-mysql_user: "db_usuario"
-mysql_pass: "root"
 http_host: "your_domain"
 http_conf: "your_domain.conf"
 http_port: "80"
