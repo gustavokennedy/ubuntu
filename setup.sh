@@ -86,7 +86,6 @@ echo "---- PHP instalado com sucesso!"
 echo "Instalando NodeJS com NVM..."
 # Instala NodeJS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
-source ~/.bashrc
 nvm install lts/*
 nvm use lts/*
 sudo apt install npm -y
