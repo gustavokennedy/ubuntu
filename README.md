@@ -51,7 +51,7 @@ http_port: "80"
 chmod +x setup.sh && ./setup.sh
 ```
 
-##### Rodar Playbook manualmente
+##### Se precisar rodar Playbook manualmente
 
 ```shell
 ansible-playbook playbook.yml
