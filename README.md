@@ -13,6 +13,12 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 ### Clone o repositório
 
     git clone git@github.com:gustavokennedy/ubuntu.git
+    
+    
     cd ubuntu
+    
+    
     chmod +x setup.sh
+    
+    
     ./setup.sh
