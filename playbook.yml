@@ -37,20 +37,15 @@
       notify: Recarrega Nginx
       
     - name: Cria Certificado LetsEncrypt
-      shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }} -d www.{{ domain_name }}
+      shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ dominio }} -d www.{{ dominio }}
       args:
-        creates: /etc/letsencrypt/live/{{ domain_name }}
-    
-    - name: Instala Nginx para site específico
-      template:
-        src: files/nginx-le.j2
-        dest: /etc/nginx/sites-enabled/le
-        
+        creates: /etc/letsencrypt/live/{{ dominio }}
+       
     - name: Adiciona Cronjob para renovação dos certificado LetsEncrypt
       cron:
         name: letsencrypt_renewal
         special_time: weekly
-        job: letsencrypt --renew certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }} && service nginx reload
+        job: letsencrypt --renew certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ dominio }} && service nginx reload
 
     - name: Remove sites "default" do Nginx
       file:
