@@ -50,23 +50,10 @@
         priv: '*.*:ALL'
         host: '%'
         state: present
-        
-    - name: Define senha do MySQL root
-      mysql_user: 
-        name: root 
-        password: "{{ mysql_root_password }}"
-        login_unix_socket: /var/run/mysqld/mysqld.sock
 
     - name: Remove todos usuários anonimos do MySQL
       mysql_user:
         name: ''
-        state: absent
-        login_user: root
-        login_password: "{{ mysql_root_password }}"
-
-    - name: Remove banco de dados Test do MySQL
-      mysql_db: 
-        name: test 
         state: absent
         login_user: root
         login_password: "{{ mysql_root_password }}"
