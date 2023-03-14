@@ -33,7 +33,7 @@
       file:
         path: "/etc/nginx/sites-enabled/default"
         state: absent
-      notify: Reload Nginx
+      notify: Reinicia Nginx
 
 # MySQL Configuration
     - name: Dedfine senha do MySQL root
