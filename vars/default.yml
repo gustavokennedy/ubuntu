@@ -5,3 +5,6 @@ http_port: "80"
 
 #API
 porta_api: "3333"
+
+#Frontend
+porta_front: "3000"
