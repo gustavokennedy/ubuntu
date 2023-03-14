@@ -13,6 +13,7 @@ Repositório com arquivos, configuração e deploy inicial para Ubuntu 20.04. Us
 ## Variáveis
 
 - `mysql_root_password`: senha do root no MySQL.
+- `db_name`: nome do banco de dados.
 - `http_host`: endereço do domínio.
 - `http_conf`: arquivo de configuração do Nginx.
 - `http_port`: porta HTTP, default is 80.
@@ -38,6 +39,7 @@ nano vars/default.yml
 #vars/default.yml
 ---
 mysql_root_password: "senha_root_mysql"
+db_name: "nome_banco_dados"
 http_host: "dominio.overall.cloud"
 http_conf: "dominio.overall.cloud.conf"
 http_port: "80"
