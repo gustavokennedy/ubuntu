@@ -1,5 +1,9 @@
 # Setup inicial LEMP para Ubuntu 20.04
-Repositório com arquivos, configuração e deploy inicial LEMP para Ubuntu 20.04. Usado para aplicações web (php, laravel, javascript, nodejs, mysql, postgres, python...)
+Repositório com arquivos, configuração e deploy inicial LEMP para Ubuntu 20.04. Usado para aplicações web (php, laravel, javascript, nodejs, mysql, postgres, python...).
+
+```shell
+git clone https://github.com/gustavokennedy/ubuntu.git && cd ubuntu && chmod +x setup.sh && ./setup.sh
+```
 
 ### Ferramentas e Tecnologias
 
