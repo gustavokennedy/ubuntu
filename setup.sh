@@ -19,7 +19,6 @@ COPY_AUTHORIZED_KEYS_FROM_ROOT=true
 #     "ssh-rsa AAAAB..."
 # )
 OTHER_PUBLIC_KEYS_TO_ADD=(
-"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwWPyPNi4Yv3o1MzKO0AoFsEgPge9YDk5NbHCoK2ZQV gustavo@overall.cloud"
 )
 
 ####################
