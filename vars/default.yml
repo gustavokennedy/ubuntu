@@ -10,4 +10,5 @@ porta_api: "3333"
 porta_front: "3000"
 
 #Banco de Dados
+mysql_root_password: "root"
 db_nome: "teste"
