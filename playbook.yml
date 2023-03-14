@@ -16,28 +16,53 @@
       apt: name={{ item }} update_cache=yes state=latest
       loop: [ 'nginx', 'python3-pymysql', 'php-fpm', 'php-mysql' ]
     
-# Nginx Configuration
+# Configuração Ansible para Ubuntu 20.04 - Nginx e Let's Encrypt
+
+    - name: Instala LetsEncrypt
+      apt: name=letsencrypt state=latest
+      
+    - name: Cria diretório LetsEncrypt
+      file: name=/var/www/letsencrypt state=directory
+      
     - name: Gera arquivo de configuração do Nginx
       template:
         src: "files/nginx.conf.j2"
         dest: "/etc/nginx/sites-available/{{ http_conf }}"
-
+        
     - name: Copia arquivo de configuração do Available para Enabled
       file:
         src: "/etc/nginx/sites-available/{{ http_conf }}"
         dest: "/etc/nginx/sites-enabled/{{ http_conf }}"
         state: link
       notify: Recarrega Nginx
+      
+    - name: Cria Certificado LetsEncrypt
+      shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }}
+      args:
+        creates: /etc/letsencrypt/live/{{ domain_name }}
     
+    - name: Instala Nginx para site específico
+      template:
+        src: files/nginx-le.j2
+        dest: /etc/nginx/sites-enabled/le
+        
+    - name: Adiciona Cronjob para renovação dos certificado LetsEncrypt
+      cron:
+        name: letsencrypt_renewal
+        special_time: weekly
+        job: letsencrypt --renew certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }} && service nginx reload
+
     - name: Remove sites "default" do Nginx
       file:
         path: "/etc/nginx/sites-enabled/default"
         state: absent
       notify: Reinicia Nginx
 
-# MySQL Configuration 
+# Configuração Ansible para Ubuntu 20.04 - MySQL 
 
-# Cria arquivo de Info do PHP
+
+# Configuração Ansible para Ubuntu 20.04 - PHP
+
     - name: Define PHP Info Page no Nginx
       template:
         src: "files/info.php.j2"
