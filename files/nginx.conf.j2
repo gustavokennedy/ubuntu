@@ -4,11 +4,11 @@ server {
         listen 443 default_server;
         root /var/www/html;
         index index.php index.html;
-        server_name {{ domain_name }};
+        server_name {{ dominio }};
 
         location / {
                 try_files $uri $uri/ =404;
-                rewrite ^ https://{{ domain_name }}$request_uri? permanent;
+                rewrite ^ https://{{ dominio }}$request_uri? permanent;
         }
 
         location ~ \.php$ {
@@ -17,6 +17,17 @@ server {
                 fastcgi_index index.php;
                 fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
                 include fastcgi_params;
+        }
+
+
+        location ^~ /api/ {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-NginX-Proxy true;
+
+                proxy_pass http://127.0.0.1:{{ porta_api }}/;
+                proxy_redirect off;
         }
 
 
