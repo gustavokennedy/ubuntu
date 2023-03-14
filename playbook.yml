@@ -63,6 +63,21 @@
 
 # Configuração Ansible para Ubuntu 20.04 - MySQL 
 
+    - name: update mysql root password for all root accounts  
+     mysql_user:  
+       name: root  
+       host: "{{ item }}"  
+       password: "{{ db_pass }}"  
+       login_user: root  
+       login_password: "{{ db_pass }}"  
+       check_implicit_admin: yes  
+       priv: "*.*:ALL,GRANT"  
+     with_items:  
+     - "{{ ansible_hostname }}"  
+     - 127.0.0.1  
+     - ::1  
+     - localhost
+
 
 # Configuração Ansible para Ubuntu 20.04 - PHP
 
