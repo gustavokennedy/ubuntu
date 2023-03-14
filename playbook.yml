@@ -14,8 +14,8 @@
       
     - name: Atualiza repositórios e cache
       apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
-      
-   - name: Atualiza pacotes APT
+
+    - name: Atualiza pacotes APT
       apt: upgrade=dist force_apt_get=yes
 
     - name: Instala pacote LEMP
