@@ -66,7 +66,7 @@ ansible-playbook playbook.yml
 ##### Rodando Playbook com as variáveis
 
 ```shell
-ansible-playbook plabyook.yml --extra-vars "dominio=teste.overall.cloud letsencrypt_email=gustavo@overall.cloud db_nome=Teste"
+ansible-playbook playbook.yml --extra-vars "dominio=teste.overall.cloud letsencrypt_email=gustavo@overall.cloud db_nome=Teste"
 
 ```
 
