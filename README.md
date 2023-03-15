@@ -63,4 +63,10 @@ chmod +x setup.sh && ./setup.sh
 ```shell
 ansible-playbook playbook.yml
 ```
+##### Rodando Playbook com as variáveis
+
+```shell
+ansible-playbook release.yml --extra-vars "dominio=teste.overall.cloud letsencrypt_email=gustavo@overall.cloud db_nome=Teste"
+
+```
 
