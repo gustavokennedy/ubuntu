@@ -1,6 +1,7 @@
 #!/bin/bash
 # Para atualizar o Frontend o utilize: ./setup.sh
 # Para problemas de permissão: chmod +x setup.sh
+# Gustavo Kennedy Renkel
 RED=`tput setaf 1`
 GREEN=`tput setaf 2`
 YELLOW=`tput setaf 3`
