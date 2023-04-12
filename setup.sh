@@ -55,3 +55,4 @@ echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
 #echo "${RED}  Reiniciando Nginx...${RESET}"
 sudo systemctl reload nginx && sudo systemctl restart nginx
 #echo "${GREEN}----OK NGINX REINICIADO COM SUCESSO!${RESET}"
+# Instalando Jenkins
