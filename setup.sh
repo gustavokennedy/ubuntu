@@ -55,4 +55,8 @@ echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
 #echo "${RED}  Reiniciando Nginx...${RESET}"
 sudo systemctl reload nginx && sudo systemctl restart nginx
 #echo "${GREEN}----OK NGINX REINICIADO COM SUCESSO!${RESET}"
-# Instalando Jenkins
+# Instalando ZSH
+#echo "${RED}  Instalando ZSH e NVIM...${RESET}"
+sudo apt install zsh neovim --yes
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" -h
+#echo "${GREEN}----OK ZSH e NVIM INSTALADOS COM SUCESSO!${RESET}"
