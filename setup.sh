@@ -49,6 +49,13 @@ echo "..."
 ansible-playbook playbook.yml
 echo "..."
 echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
+echo "${RED}  Instalando NVM & NodeJS...${RESET}"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
+nvm install node
+node -v
+echo "${GREEN}----OK NVM E NODEJS INSTALADOS COM SUCESSO!${RESET}"
 #echo "${RED}  Instalando PHPMYADMIN...${RESET}"
 #sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -qy --yes
 #echo "${GREEN}----OK PHPMYADMIN INSTALADO COM SUCESSO!${RESET}"
