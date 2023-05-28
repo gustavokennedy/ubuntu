@@ -22,19 +22,19 @@
       apt: name={{ item }} update_cache=yes state=latest
       loop: [ 'nginx', 'mysql-server', 'python3-pymysql', 'php-fpm', 'php-mysql' ]
       
-     - name: Instala NVM
-       shell: >
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-       args:
+    - name: Instala NVM
+      shell: >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+      args:
           creates: "/root/.nvm/nvm.sh"
 
-      - name: Instala Versões do Node
-        shell: ". /root/.bashrc && nvm install {{item}}"
-        with_items: 
-          - 'v10.24.1'
-          - 'v16.17.0'
-          - '--lts'
-          - 'node'
+    - name: Instala Versões do Node
+      shell: ". /root/.bashrc && nvm install {{item}}"
+      with_items: 
+        - 'v10.24.1'
+        - 'v16.17.0'
+        - '--lts'
+        - 'node'
     
 # Configuração Ansible para Ubuntu 20.04 - Nginx e Let's Encrypt
 
