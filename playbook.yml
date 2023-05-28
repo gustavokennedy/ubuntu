@@ -29,7 +29,7 @@
           creates: "/root/.nvm/nvm.sh"
 
     - name: Instala Versões do Node
-      shell: ". /root/.bashrc && nvm install {{item}}"
+      shell: "nvm install {{item}}"
       with_items: 
         - 'v10.24.1'
         - 'v16.17.0'
