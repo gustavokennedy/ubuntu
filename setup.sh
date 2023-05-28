@@ -52,7 +52,7 @@ echo "${GREEN}----OK PLAYBOOK FINALIZADO COM SUCESSO!${RESET}"
 echo "${RED}  Instalando NVM & NodeJS...${RESET}"
 sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
 sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-sudo source ~/.bashrc
+source ~/.bashrc
 sudo nvm install node
 sudo node -v
 echo "${GREEN}----OK NVM E NODEJS INSTALADOS COM SUCESSO!${RESET}"
