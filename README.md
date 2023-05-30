@@ -9,7 +9,7 @@ Repositório com arquivos, configuração e deploy inicial LEMP para Ubuntu 20.0
  - [Python 3.9](https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu-20-04/)
  - Linux Ubuntu 20.04.2
  - Git 2.25.1
- - ZSH e NVIM (ZSH_THEME="xiong-chiamiov-plus"
+ - ZSH e NVIM (ZSH_THEME="xiong-chiamiov-plus")
  - Jenkins (em breve)
 
 ## Variáveis
